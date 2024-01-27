@@ -14,9 +14,6 @@ local zeroWidth = {'⁪',
 	'⁠',
 	'⁡',
 	'⁢',
-	'⁢',
-	'⁣',
-	'⁤',
 	--'⁦',
 	--'⁧',
 	--'⁨',
@@ -27,23 +24,26 @@ local zeroWidth = {'⁪',
 	--'‎'
 }
 
+local zeroWidthStart = {'⁢', '⁣', '⁤'}
+
 local function generateName(id, scope)
-	local name = {}
-	local d = id % #zeroWidth
-	id = (id - d) / #zeroWidth
-	table.insert(name, zeroWidth[d + 1])
+	local name = ''
+	local d = id % #zeroWidthStart
+	id = (id - d) / #zeroWidthStart
+	name = name .. zeroWidthStart[d + 1]
 
 	while id > 0 do
 		local d = id % #zeroWidth
 		id = (id - d) / #zeroWidth
-		table.insert(name, zeroWidth[d + 1])
+		name = name .. zeroWidth[d + 1]
 	end
 
-	return table.concat(name, "_")
+	return name
 end
 
 local function prepare(ast)
-	util.shuffle(zeroWidth)
+	util.shuffle(zeroWidth);
+	util.shuffle(zeroWidthStart);
 end
 
 return {
