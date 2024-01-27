@@ -8,7 +8,7 @@ The following table provides an overview:
 | LuaVersion    | string  | "Lua51", "LuaU"                              | "Lua51"           |
 | PrettyPrint   | boolean | true, false                                  | false             |
 | VarNamePrefix | string  | any                                          | ""                |
-| NameGenerator | string  | "Mangled", "MangledShuffled", "Il", "Number" | "MangledShuffled" |
+| NameGenerator | string  | "Mangled", "MangledShuffled", "Il", "Number", "ZeroWidth" | "MangledShuffled" |
 | Seed          | number  | any                                          | 0                 |
 | Steps         | table   | StepConfig\[]                                | {}                |
 

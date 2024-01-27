@@ -82,17 +82,17 @@ function Unparser:newline(ws_needed)
 end
 
 function Unparser:whitespaceIfNeeded(following, ws)
-	if(self.prettyPrint or self.identCharsLookup[string.sub(following, 1, 1)]) then
-		return ws or self.SPACE;
-	end
-	return "";
+	--if(self.prettyPrint or self.identCharsLookup[string.sub(following, 1, 1)]) then
+	--	return ws or self.SPACE;
+	--end
+	return " ";
 end
 
 function Unparser:whitespaceIfNeeded2(leading, ws)
-	if(self.prettyPrint or self.identCharsLookup[string.sub(leading, #leading, #leading)]) then
-		return ws or self.SPACE;
-	end
-	return "";
+	--if(self.prettyPrint or self.identCharsLookup[string.sub(leading, #leading, #leading)]) then
+	--	return ws or self.SPACE;
+	--end
+	return " ";
 end
 
 function Unparser:optionalWhitespace(ws)
